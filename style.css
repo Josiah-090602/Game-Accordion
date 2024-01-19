@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+:root{
+    --primary:#222831;
+    --lightgray: #393E46;
+    --secondary: #00ADB5;
+    --text-color: #00FFF5;
+    --white: #FBF9F1;
+    --transition1: ease-in-out 200ms;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lightgray);
+}
+
+.main-con{
+    background-color: var(--primary);
+    height: 40em;
+    width: 80em;
+    border-radius: 50px;
+    display: flex;
+    gap:10px;
+    padding: 20px;
+}
+
+.card{
+    cursor: pointer;
+    min-width: 70px;
+    height: 100%;
+    flex-grow: 10;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card.active{
+    border: 1px solid var(--secondary);
+    max-width: 70em;
+    height: 100%;
+    flex-grow: 100 !important;
+}
+
+.card > .background{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: -1;
+    z-index: 1;
+    filter: blur(10px) brightness(50%);
+}
+
+.card.active > .background{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: -1;
+    z-index: 1;
+    filter: blur(0) brightness(80%);
+}
+
+.content{
+    width: auto;
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    left: 23px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.card.active .content{
+    bottom: 20px;
+    left: 20px;
+}
+
+.card .content > h2{
+    opacity: 0;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    width: 200px;
+}
+
+.card.active .content > h2{
+    opacity: 1;
+    font-weight: 400;
+    color: var(--text-color);
+    width: auto;
+}
+
+
+.card .console{
+    border-radius: 50px;
+    border: solid var(--white) 1px;
+    padding: 10px 12px;
+    color: var(--white);
+
+}
+
+.card.active .console{
+    border-radius: 50px;
+    border: solid var(--text-color) 1px;
+    padding: 10px 12px;
+    height: auto;
+    width: auto;
+    color: var(--text-color);
+}
+
+
+
+
